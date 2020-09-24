@@ -1,0 +1,6 @@
+
+numpy==1.18.1
+streamlit==0.64.0
+pandas==1.0.5
+plotly==4.5.0
+pyportfolioopt==1.2.4
