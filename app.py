@@ -50,6 +50,9 @@ def plotstocks(df):
 
 snp = pd.read_csv('snp10.csv',index_col=0)
 
+link = '[source code](https://github.com/mkhalai/stock-portfolio-heroku)'
+st.markdown(link, unsafe_allow_html=True)
+
 st.write("""
  # S&P Top 10 Stock portfolios
  ## **Create** your own ***optimized*** stock portfolio
