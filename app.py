@@ -1,4 +1,5 @@
 
+
 import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
@@ -38,7 +39,7 @@ def plotstocks(df):
             name=stock,
             mode='lines',
             opacity=alpha,
-            line={'color':'Navy','width': lw}
+            line={'width': lw}
         ))
     figure.update_layout(height=600,width=800,
                          xaxis_title='Date',
@@ -59,8 +60,10 @@ st.write("""
 """)
 
 symbols = snp.columns.values
-check_boxes = [st.sidebar.checkbox(symbol, key=symbol) for symbol in symbols]
-checked = [symbol for symbol, checked in zip(symbols, check_boxes) if checked]
+#check_boxes = [st.sidebar.checkbox(symbol, key=symbol) for symbol in symbols]
+#checked = [symbol for symbol, checked in zip(symbols, check_boxes) if checked]
+st.write("""### Select stocks """)
+checked = st.multiselect('stocks',list(symbols),default=list(symbols))
 
 if len(checked) == 0:
     st.write(" ## ERROR: Select some stocks")
@@ -111,3 +114,5 @@ fig3.update_layout(xaxis_title = 'Date',
                    width=800
                    )
 st.plotly_chart(fig3)
+
+
